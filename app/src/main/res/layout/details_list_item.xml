@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="10dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/imageTextview"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_for_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/nameTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:singleLine="true"
+            android:textColor="#2B2424"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageTextview"
+            app:layout_constraintLeft_toRightOf="@id/imageTextview"
+            android:text="Abhinav Tyagi"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/Gender_AgeTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#2B2424"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameTextview"
+            app:layout_constraintLeft_toRightOf="@id/imageTextview"
+            android:text="M | 32"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/viewresultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Gender_AgeTextview"
+            app:layout_constraintLeft_toRightOf="@id/imageTextview"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            app:strokeWidth="0dp"
+            android:textColor="#2F5DA4"
+            android:text="View Resume"
+            android:textAllCaps="false"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:background="@color/black"
+            android:layout_marginTop="-1dp"
+            android:backgroundTint="#2F5DA4"
+            app:layout_constraintTop_toBottomOf="@id/viewresultTextView"
+            app:layout_constraintLeft_toLeftOf="@id/viewresultTextView"
+            app:layout_constraintRight_toRightOf="@id/viewresultTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>
