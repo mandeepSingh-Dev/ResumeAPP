@@ -23,6 +23,7 @@ class MyAdapter(context:Context,list:List<Entities>):RecyclerView.Adapter<MyAdap
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val entity = list.get(position)
         holder.nameTextView.text = entity.name
+
         holder.Gender_AgeTextview.setText(dateToAge(entity.dob).toString() + " | " + entity.gender)
     }
 
@@ -30,17 +31,17 @@ class MyAdapter(context:Context,list:List<Entities>):RecyclerView.Adapter<MyAdap
         return  list.size
     }
 
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
 
-        val nameTextView: TextView = itemView.findViewById(R.id.nameTextview)
-        val Gender_AgeTextview: TextView = itemView.findViewById(R.id.Gender_AgeTextview)
-
+        var nameTextView: TextView = itemView.findViewById(R.id.nameTextview)
+        var Gender_AgeTextview: TextView = itemView.findViewById(R.id.Gender_AgeTextview)
     }
-
     fun dateToAge(date:String):Int{
+        Log.d("dinsd",date)
         val list = date.split("-")
         val year = list.get(0)
         val age = 2022 - year.toInt()
-       return age
+        Log.d("sjdbs",age.toString())
+        return age
     }
 }

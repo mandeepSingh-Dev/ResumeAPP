@@ -41,6 +41,7 @@ class ViewActivity : AppCompatActivity() {
         myViewmodel = ViewModelProvider(this,factory!!).get(MyViewModel::class.java)
 
         myViewmodel?.resumesList?.observe(this, Observer {
+
             myAdapter = MyAdapter(this,it)
             binding?.recyclerView?.layoutManager = LinearLayoutManager(this)
             binding?.recyclerView?.adapter = myAdapter

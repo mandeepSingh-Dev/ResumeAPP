@@ -2,10 +2,8 @@ package com.example.resumeapp.RoomClasses
 
 import android.content.Context
 import androidx.room.*
-import com.example.resumeapp.Converter.Converter
 
-@Database(entities = arrayOf(Entities::class), version = 5, exportSchema = false)
-@TypeConverters(Converter::class)
+@Database(entities = arrayOf(Entities::class), version = 7, exportSchema = false)
 abstract class MyRoom : RoomDatabase(){
 
     companion object {

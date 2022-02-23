@@ -74,10 +74,8 @@ class AddDetailsActivity : AppCompatActivity() ,MyDialogFragment.MyDateListener 
             //save candidate data only if all the fields are filled
             if((!name?.isEmpty()!!) && (!dob?.isEmpty()!!) && (!gender?.isEmpty()!!)&& (!current_ctc?.isEmpty()!!)&& (!expected_ctc?.isEmpty()!!)&& (!skills?.isEmpty()!!))
             { //inserting data into Database
-                val bitmap = BitmapFactory.decodeResource(resources,R.drawable.skywall)
-
-                   myViewmodel?.insert(Entities(name!!, dob!!, gender!!, current_ctc!!, expected_ctc!!, skills!!,bitmap))
-                //startActivity(Intent(baseContext,ViewActivity::class.java))
+                   myViewmodel?.insert(Entities(name!!, dob!!, gender!!, current_ctc!!, expected_ctc!!, skills!!))
+                   startActivity(Intent(baseContext,ViewActivity::class.java))
             }
 
         }
