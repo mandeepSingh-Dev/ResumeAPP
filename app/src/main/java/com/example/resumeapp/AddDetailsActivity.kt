@@ -1,6 +1,7 @@
 package com.example.resumeapp
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.resumeapp.RoomClasses.*
 import com.example.resumeapp.databinding.ActivityAddDetailsBinding
+import kotlinx.coroutines.CoroutineScope
 
 
 class AddDetailsActivity : AppCompatActivity() ,MyDialogFragment.MyDateListener {
@@ -72,8 +74,10 @@ class AddDetailsActivity : AppCompatActivity() ,MyDialogFragment.MyDateListener 
             //save candidate data only if all the fields are filled
             if((!name?.isEmpty()!!) && (!dob?.isEmpty()!!) && (!gender?.isEmpty()!!)&& (!current_ctc?.isEmpty()!!)&& (!expected_ctc?.isEmpty()!!)&& (!skills?.isEmpty()!!))
             { //inserting data into Database
-                   myViewmodel?.insert(Entities(name!!, dob!!, gender!!, current_ctc!!, expected_ctc!!, skills!!))
-                startActivity(Intent(baseContext,ViewActivity::class.java))
+                val bitmap = BitmapFactory.decodeResource(resources,R.drawable.skywall)
+
+                   myViewmodel?.insert(Entities(name!!, dob!!, gender!!, current_ctc!!, expected_ctc!!, skills!!,bitmap))
+                //startActivity(Intent(baseContext,ViewActivity::class.java))
             }
 
         }
