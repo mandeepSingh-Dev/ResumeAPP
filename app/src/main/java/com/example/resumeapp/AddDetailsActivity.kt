@@ -104,8 +104,7 @@ class AddDetailsActivity : AppCompatActivity() ,MyDialogFragment.MyDateListener 
     this.year = year
     this.month = month
     this.day = day
-        Log.d("jenfe","$year-$day-$month")
-        binding?.DOBTextLayout?.editText?.setText(year.toString()+"-"+month.toString()+"-"+day.toString())
+        binding?.DOBTextLayout?.editText?.setText("$year-$day-$month")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
